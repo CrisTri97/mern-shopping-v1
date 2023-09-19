@@ -59,9 +59,11 @@ const Products = ({ cat, filters, sort }) => {
     }
   }, [sort]);
   if (products.length <= 0 || !products) {
-    <Box sx={{ display: "flex" }}>
-      <CircularProgress />
-    </Box>;
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    );
   }
 
   return (
