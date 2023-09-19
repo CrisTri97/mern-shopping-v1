@@ -53,7 +53,7 @@ const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
-  if (products.length > 0) {
+  if (products.length === 0) {
     return <p> Product not found</p>;
   }
 
