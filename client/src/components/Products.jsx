@@ -24,7 +24,10 @@ const Products = ({ cat, filters, sort }) => {
         );
 
         setProducts(res.data);
-      } catch (error) {}
+      } catch (error) {
+        setProducts([]);
+        console.log(error);
+      }
     };
     getProducts();
   }, [cat]);
@@ -55,7 +58,7 @@ const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
-  if (products.length <= 0) {
+  if (products.length <= 0 || !products) {
     <Box sx={{ display: "flex" }}>
       <CircularProgress />
     </Box>;
