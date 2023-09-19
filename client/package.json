@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://backend-shopping-v1.onrender.com"
+  "proxy": "https://backend-shopping-v1.onrender.com/api"
 }
