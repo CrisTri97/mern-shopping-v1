@@ -18,7 +18,7 @@ const Pay = () => {
     const makeRequest = async () => {
       try {
         const res = await axios.post(
-          "http://localhost:8000/api/checkout/payment",
+          "https://backend-shopping-v1.onrender.com/api/checkout/payment",
           {
             tokenId: stripeToken.id,
             amount: 2000,
@@ -40,8 +40,7 @@ const Pay = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-      }}
-    >
+      }}>
       {stripeToken ? (
         <span>Processing. Please wait ....</span>
       ) : (
@@ -53,8 +52,7 @@ const Pay = () => {
           description="Your total is $20"
           amount={2000}
           token={onToken}
-          stripeKey={KEY}
-        >
+          stripeKey={KEY}>
           <button
             style={{
               border: "none",
@@ -65,8 +63,7 @@ const Pay = () => {
               color: "white",
               fontWeight: 600,
               cursor: "pointer",
-            }}
-          >
+            }}>
             Pay Now
           </button>
         </StripeCheckout>
