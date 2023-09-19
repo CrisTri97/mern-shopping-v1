@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -54,7 +56,9 @@ const Products = ({ cat, filters, sort }) => {
     }
   }, [sort]);
   if (products.length === 0) {
-    return <p> Product not found</p>;
+    <Box sx={{ display: "flex" }}>
+      <CircularProgress />
+    </Box>;
   }
 
   return (
