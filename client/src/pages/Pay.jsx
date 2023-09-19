@@ -18,7 +18,7 @@ const Pay = () => {
     const makeRequest = async () => {
       try {
         const res = await axios.post(
-          "https://backend-shopping-v1.onrender.com/api/checkout/payment",
+          `${process.env.BACKEND_URL}/checkout/payment`,
           {
             tokenId: stripeToken.id,
             amount: 2000,

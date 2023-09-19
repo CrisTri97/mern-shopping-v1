@@ -16,7 +16,9 @@ const Products = ({ cat, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          cat ? `/products/?category=${cat}` : "/products"
+          cat
+            ? `${process.env.BACKEND_URL}/products/?category=${cat}`
+            : `${process.env.BACKEND_URL}/products`
         );
 
         setProducts(res.data);
