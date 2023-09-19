@@ -51,20 +51,19 @@ const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
+  if (products.length > 0) {
+    return <p> Product not found</p>;
+  }
 
   return (
     <Container>
-      {cat ? (
-        filteredProducts.map((item, index) => (
-          <Product key={index} item={item} />
-        ))
-      ) : products ? (
-        products
-          .slice(0, products.length)
-          ?.map((item, index) => <Product key={index} item={item} />)
-      ) : (
-        <>Product not found</>
-      )}
+      {cat
+        ? filteredProducts.map((item, index) => (
+            <Product key={index} item={item} />
+          ))
+        : products
+            .slice(0, products.length)
+            ?.map((item, index) => <Product key={index} item={item} />)}
     </Container>
   );
 };
