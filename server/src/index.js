@@ -19,6 +19,9 @@ mongoose
   .catch((e) => console.log("Connect database failed!: " + e));
 
 //Router
+app.get("/api", () => {
+  return res.status(200).json("call api success");
+});
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
