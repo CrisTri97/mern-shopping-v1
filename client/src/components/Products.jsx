@@ -54,13 +54,17 @@ const Products = ({ cat, filters, sort }) => {
 
   return (
     <Container>
-      {cat
-        ? filteredProducts.map((item, index) => (
-            <Product key={index} item={item} />
-          ))
-        : products
-            .slice(0, products.length)
-            .map((item, index) => <Product key={index} item={item} />)}
+      {cat ? (
+        filteredProducts.map((item, index) => (
+          <Product key={index} item={item} />
+        ))
+      ) : products.length > 0 ? (
+        products
+          .slice(0, products.length)
+          .map((item, index) => <Product key={index} item={item} />)
+      ) : (
+        <>Product not found</>
+      )}
     </Container>
   );
 };
