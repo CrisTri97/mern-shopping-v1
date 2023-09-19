@@ -58,7 +58,7 @@ const Products = ({ cat, filters, sort }) => {
         filteredProducts.map((item, index) => (
           <Product key={index} item={item} />
         ))
-      ) : products.length > 0 ? (
+      ) : products ? (
         products
           .slice(0, products.length)
           ?.map((item, index) => <Product key={index} item={item} />)
