@@ -58,7 +58,7 @@ const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
-  if (products.length <= 0 || !products) {
+  if (!products[0]?._id) {
     return (
       <Box sx={{ display: "flex" }}>
         <CircularProgress />
