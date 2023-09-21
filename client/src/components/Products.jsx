@@ -10,17 +10,21 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+
+const backEndUrl = process.env.BACKEND_URL;
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+  console.log("check19", backEndUrl);
 
   useEffect(() => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
           cat
-            ? `${process.env.BACKEND_URL}/products/?category=${cat}`
-            : `${process.env.BACKEND_URL}/products`
+            ? `${backEndUrl}/products/?category=${cat}`
+            : `${backEndUrl}/products`
         );
 
         setProducts(res.data);
@@ -58,6 +62,8 @@ const Products = ({ cat, filters, sort }) => {
       );
     }
   }, [sort]);
+
+  console.log("checkProductState", products);
   if (!products[0]?._id) {
     return (
       <Box sx={{ display: "flex" }}>
