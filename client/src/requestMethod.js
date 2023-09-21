@@ -1,6 +1,6 @@
 import { Public } from "@mui/icons-material";
 import axios from "axios";
-const BASE_URL = process.env.BACKEND_URL;
+const BASE_URL = "https://backend-shopping-v1.onrender.com/api";
 // const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
 //   .currentUser.accessToken;
 const TOKEN = () => {

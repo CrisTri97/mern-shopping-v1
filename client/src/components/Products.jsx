@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const backEndUrl = process.env.BACKEND_URL;
+const backEndUrl = "https://backend-shopping-v1.onrender.com/api";
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
